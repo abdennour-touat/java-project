@@ -3,8 +3,15 @@ package projet_poo;
 public class TestsCompte {
 
 	public static void main(String[] args) {
+		
+		/* trois comptes de type courant, lpe, ldd (resp) sera criee
+		 * on test tout les methodes avec tous les cas possibles */
+		
+		
 		//le compte courant...
 		CompteCourant cp1 = new CompteCourant(0, null, 1000);
+		//compte pour tester le virement..
+		ComptePEL cptest = new ComptePEL();
 		//tests depots..
 		System.out.println("///////////////");
 		System.out.println("compte courant:");
@@ -21,6 +28,15 @@ public class TestsCompte {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
+		//test virement
+		System.out.println("virement:");
+		try {
+			cp1.virement(cptest, 200);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		System.out.println(cptest.toString());
+		
 		//test retrait
 		System.out.println("retrait montant negatif:");
 		try {
@@ -82,6 +98,14 @@ public class TestsCompte {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
+		//test virement
+		System.out.println("virement:");
+		try {
+			cp1.virement(cptest, 200);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		System.out.println(cptest.toString());
 		System.out.println("retrait solde negatif:");
 		try {
 			cpldd.retrait(-500);
