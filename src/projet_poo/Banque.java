@@ -104,13 +104,13 @@ public class Banque {
 			e.printStackTrace();
 		}
 		
-		ComptePEL cpel = new ComptePEL(0, cl2);
+		ComptePEL cpel = new ComptePEL(0, cl1);
 		try {
 			cpel.depot(200);
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		cl2.ajouterCompte(cpel);
+		cl1.ajouterCompte(cpel);
 		
 		
 		CompteCourant cc2 = new CompteCourant(0, cl1);
